@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    body{
+        background: url(Image.jfif);
+        background-size: cover;
+        text-align: center;
+        padding: 10px;
+    }
+
+    h1{
+    color: white;
+    text-shadow: 10px 20px 20px black;
+    box-shadow: 6px 9px 5px white;
+    background: pink;
+    border-radius: 100px 100px;
+    border: solid blue 8px;
+    font-family: cursive;
+    }
+
+    button{
+        font-size: 40px;
+        padding: 10px;
+        color: rgb(34, 255, 255);
+        background-color: black;
+        box-shadow: 6px 9px 5px white;
+    }
+
+    h2{
+        color: white;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    img{
+        text-align: center;
+    }
+
+
+</style>
+
+</head>
+<body>
+    <h1>Happy Typing</h1>
+    <h2 id="words">Type Here</h2>
+    <button id="deleteBtn">Delete</button>
+    <img src="SkatingPig.png">
+
+    <script>
+        var words = document.querySelector("#words")
+        var keyLog = []
+        var deleteBtn = document.getElementById("deleteBtn")
+        deleteBtn.onclick = handleDelete
+
+        function handleDelete(){
+            keyLog.pop()
+            words.innerHTML = keyLog.join("")
+        }
+
+        document.onkeydown = function(event){
+            console.log(event.key)
+            keyLog.push(event.key)
+            words.innerHTML = keyLog.join("")
+        }
+
+
+
+
+    </script>
+</body>
+</html>
